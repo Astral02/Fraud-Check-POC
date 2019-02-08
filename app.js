@@ -20,11 +20,11 @@ app.get('/', function (req, res) {
   res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
 })
 app.post('/', function (req, res) {   
-    console.log(chalk.green('The playlist contains these tracks %j', req.body.data));
-  
-  res.set({'Content-Type': 'application/xml'});
-    res.send(`<CreditCard Number="4111111111111111" Name="Plain XML Response ">        
-        </CreditCard>`);
+    res.header('Content-Type', 'application/json');
+      console.log(req);
+   console.log("received the post request. Logging the request body :");
+   console.log(req.body);
+  res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
 })
  
 
