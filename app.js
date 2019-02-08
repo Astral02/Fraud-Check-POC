@@ -1,6 +1,7 @@
 var express = require('express');  
 var app = express();
 var config = require('./config').config;
+var fs = require('fs');
 var chalk = require('chalk');
 
 app.get('/getTCC', function (req, res) {
