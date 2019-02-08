@@ -1,7 +1,7 @@
-var express = require('express');
+var express = require('express');  
 var app = express();
-var fs = require("fs");
 var config = require('./config').config;
+var chalk = require('chalk');
 
 app.get('/getTCC', function (req, res) {
    fs.readFile( __dirname + "/" + "CCinfo.json", 'utf8', function (err, data) {
