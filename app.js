@@ -10,7 +10,7 @@ app.get('/getTCC', function (req, res) {
    });
 })
 
-app.get('/getTCC', function (req, res) {
+app.get('/', function (req, res) {
    fs.readFile( __dirname + "/" + "CCinfo.json", 'utf8', function (err, data) {
       console.log( data );
       res.end( data );
