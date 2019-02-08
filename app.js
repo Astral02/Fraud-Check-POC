@@ -6,7 +6,16 @@ var fs = require('fs');
 var chalk = require('chalk');
 
 app.use(express.static(__dirname));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use((req, res) => {
+   console.log("inside app.use");
+  console.log(req.body); // this is what you want           
+
+  res.on("finish", () => {
+
+    console.log(res);
+
+  });
 
 app.get('/getTCC', function (req, res) {
    res.header('Content-Type', 'application/json');
