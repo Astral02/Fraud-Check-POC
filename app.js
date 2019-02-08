@@ -19,9 +19,9 @@ app.get('/', function (req, res) {
    console.log(req.body);
   res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
 })
-app.post('/', function (req, res) {   
+app.post('/', function (req, res, body) {   
     res.header('Content-Type', 'application/json');
-      console.log(req);
+      console.log(body);
    console.log("received the post request. Logging the request body :");
    console.log(req.body);
   res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
