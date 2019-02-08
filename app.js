@@ -24,8 +24,6 @@ app.post('/postPCC', function (req, res) {
    });
 })
 
-var server = app.listen(config.port, function () {
-   var host = server.address().address
-   var port = server.address().port
-   console.log("Example app listening at http://%s:%s", host, config.port)
+app.listen(config.port, function () {   
+   console.log("Example app listening at port", config.port)
 })
