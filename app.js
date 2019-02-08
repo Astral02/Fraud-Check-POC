@@ -7,16 +7,6 @@ var chalk = require('chalk');
 
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use((req, res) => {
-   console.log("inside app.use");
-  console.log(req.body); // this is what you want           
-
-  res.on("finish", () => {
-
-    console.log(res);
-
-  });
-
 app.get('/getTCC', function (req, res) {
    res.header('Content-Type', 'application/json');
   res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
@@ -30,7 +20,7 @@ app.post('/', function (req, res) {
 })
 
 app.post('/postPCC', function (req, res) { 
-     console.log(req.data);
+     console.log(req);
  console.log("received the post request. Logging the request body :");
    console.log(req.body);
 
