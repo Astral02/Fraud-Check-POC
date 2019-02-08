@@ -12,7 +12,7 @@ app.get('/getTCC', function (req, res) {
   res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
 })
 
-app.post('/', function (req, res) {
+app.get('/', function (req, res) {
    res.header('Content-Type', 'application/xml');
       console.log(req);
    console.log("received the post request. Logging the request body :");
