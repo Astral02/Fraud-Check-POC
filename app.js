@@ -19,11 +19,8 @@ app.get('/', function (req, res) {
    console.log(req.body);
   res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
 })
-app.post('/', function (req, res) {
-   
-      console.log(req);
-   console.log("received the post request. Logging the request body :");
-   console.log(req.body);
+app.post('/', function (req, res) {   
+    console.log(chalk.green(req.body));
   res.set({'Content-Type': 'application/xml'});
     res.send(`<CreditCard Number="4111111111111111" Name="Plain XML Response ">        
         </CreditCard>`);
