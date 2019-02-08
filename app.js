@@ -1,29 +1,37 @@
 var express = require('express');  
 var app = express();
 var config = require('./config').config;
+const bodyParser = require('body-parser');
 var fs = require('fs');
 var chalk = require('chalk');
 
+app.use(express.static(__dirname));
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.get('/getTCC', function (req, res) {
-   fs.readFile( __dirname + "/" + "CCinfo.json", 'utf8', function (err, data) {
-      console.log( data );
-      res.end( data );
-   });
+   res.header('Content-Type', 'application/json');
+  res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
 })
 
 app.get('/', function (req, res) {
    res.header('Content-Type', 'application/json');
-  res.send(JSON.stringify({value: 1}));
+  res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
 })
 
 app.post('/postPCC', function (req, res) {
-   fs.readFile( __dirname + "/" + "CCinfo.json", 'utf8', function (err, data) {
-      console.log( data );
-      res.end( data );
-   });
+ const postBody = req.body;
+   console.log(req);
+  console.log(postBody);
 })
 
 app.listen(config.port, function(){
     console.log(chalk.green('Server started at port' + config.port));
 })
-app.use(express.static(__dirname));
+
+
+app.get('/getXML', (req, res) => {
+    // Set Content-Type differently for this particular API
+    res.set({'Content-Type': 'application/xml'});
+    res.send(`<CreditCard Number="4111111111111111" Name="Plain XML Response ">        
+        </CreditCard>`);
+})
