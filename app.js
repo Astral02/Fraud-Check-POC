@@ -20,8 +20,8 @@ app.get('/', function (req, res) {
 
 app.post('/postPCC', function (req, res) {
  const postBody = req.body;
-   console.log(req);
-  console.log(postBody);
+ console.log("received the post request");
+ console.log(postBody);
 })
 
 app.listen(config.port, function(){
