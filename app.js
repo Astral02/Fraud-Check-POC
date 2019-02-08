@@ -19,6 +19,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/postPCC', function (req, res) { 
+     console.log(req.data);
  console.log("received the post request. Logging the request body :");
    console.log(req.body);
 
