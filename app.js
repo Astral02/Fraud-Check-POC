@@ -24,6 +24,6 @@ app.post('/postPCC', function (req, res) {
    });
 })
 
-app.listen(config.port, function () {   
-   console.log("Example app listening at port", config.port)
+app.listen(config.port, function(){
+    console.log(chalk.green('Server started at port' + config.port));
 })
