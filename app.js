@@ -59,6 +59,5 @@ app.listen(config.port, function(){
 app.get('/getXML', (req, res) => {
     // Set Content-Type differently for this particular API
     res.set({'Content-Type': 'application/xml'});
-    res.send("<AccountNumber><CCNumber>4111111111111111</AccountNumber>">        
-        </CreditCard>`);
+    res.send('<AccountNumber><CCNumber>4111111111111111</CCNumber></AccountNumber>');          
 })
