@@ -28,14 +28,14 @@ app.get('/', function (req, res) {
       console.log(req);
    console.log("received the post request. Logging the request body :");
    console.log(req.body);
-  res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
+  res.send(JSON.stringify({CCNumber: 4111111111111111, name: "plain json"}));
 })
 app.post('/', function (req, res, body) {   
     res.header('Content-Type', 'application/json');
     console.dir(req.body, { depth: null });
    console.log("received the post request. Logging the request body :");
    //console.log(req.body);
-  res.send(JSON.stringify({cardNumber: 4111111111111111, name: "plain json"}));
+  res.send(JSON.stringify({CCNumber: 4111111111111111, name: "plain json"}));
 })
  
 
@@ -57,6 +57,6 @@ app.listen(config.port, function(){
 app.get('/getXML', (req, res) => {
     // Set Content-Type differently for this particular API
     res.set({'Content-Type': 'application/xml'});
-    res.send(`<CreditCard Number="4111111111111111" Name="Plain XML Response ">        
+    res.send(`<CreditCard CCNumber="4111111111111111" Name="Plain XML Response ">        
         </CreditCard>`);
 })
