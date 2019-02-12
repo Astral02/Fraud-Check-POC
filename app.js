@@ -37,8 +37,7 @@ app.post('/', function (req, res, body) {
    //console.log(req.body);
   //res.send(JSON.stringify({CCNumber: 4111111111111111, name: "plain json"}));
    res.set({'Content-Type': 'application/xml'});
-    res.send("<AccountNumber><CCNumber>4111111111111111</AccountNumber>">        
-        </CreditCard>`);
+   res.send( `<AccountNumber><CCNumber>4111111111111111</AccountNumber>`);            
 })
  
 
