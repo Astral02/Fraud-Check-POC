@@ -6,7 +6,10 @@ var fs = require('fs');
 var chalk = require('chalk');
 
 require('body-parser-xml')(bodyParser);
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 app.use(bodyParser.xml({
   limit: '1MB',   // Reject payload bigger than 1 MB
   xmlParseOptions: {
