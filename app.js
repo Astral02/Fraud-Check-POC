@@ -35,11 +35,11 @@ app.get('/', function (req, res) {
 })
 app.post('/', function (req, res, body) {   
     res.header('Content-Type', 'application/json');
+   res.setHeader('charset', 'utf-8')
    console.dir(req.body, { depth: null });
    console.log("received the post request. Logging the request body :");
   console.log(req.body);
-  res.status(200);
-  res.send(JSON.stringify({"message":"Processed"}));
+  res.status(200).send(JSON.stringify({"message":"Processed"}));
  // res.set({'Content-Type': 'application/xml'});
   //res.send('<AccountNumber>4111111111111111</AccountNumber>');            
 })
@@ -49,9 +49,11 @@ app.post('/postPCC', function (req, res, body) {
      console.log(req);
  console.log("received the post request. Logging the request body :");
    console.log(req.body);
+   res.setHeader('charset', 'utf-8');
 
    // just call res.end(), or show as string on web
-   res.send(req.body);
+  
+  res.status(200).send(req.body);
 
 })
 
