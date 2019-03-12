@@ -38,7 +38,8 @@ app.post('/', function (req, res, body) {
    console.dir(req.body, { depth: null });
    console.log("received the post request. Logging the request body :");
   console.log(req.body);
- res.send(JSON.stringify({tokenID: 4111111111111111, name: "plain json"}));
+  res.status(200);
+ //res.send(JSON.stringify({tokenID: 4111111111111111, name: "plain json"}));
  // res.set({'Content-Type': 'application/xml'});
   //res.send('<AccountNumber>4111111111111111</AccountNumber>');            
 })
