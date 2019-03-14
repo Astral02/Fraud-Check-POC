@@ -34,14 +34,14 @@ app.get('/', function (req, res) {
   res.send(JSON.stringify({CCNumber: 4111111111111111, name: "plain json"}));
 })
 app.post('/', function (req, res, body) {   
-    res.header('Content-Type', 'application/json');
-   res.setHeader('charset', 'utf-8')
+   // res.header('Content-Type', 'application/json');
+  // res.setHeader('charset', 'utf-8')
    console.dir(req.body, { depth: null });
    console.log("received the post request. Logging the request body :");
   console.log(req.body);
-  res.status(200).send(JSON.stringify({"message":"Processed"}));
- // res.set({'Content-Type': 'application/xml'});
-  //res.send('<AccountNumber>4111111111111111</AccountNumber>');            
+  //res.status(200).send(JSON.stringify({"message":"Processed"}));
+  res.set({'Content-Type': 'application/xml'});
+  res.send('<AccountNumber>4111111111111111</AccountNumber>');            
 })
  
 
